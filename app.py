@@ -34,12 +34,12 @@ from rediveCrawler import crawler
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-	RediveCrawler = crawler()
-	reply = event.message.text
-	if "test" in reply:
-		result = RediveCrawler.information
-	else:
-		result = RediveCrawler.get_url()
+    RediveCrawler = crawler()
+    reply = event.message.text
+    if "test" in reply:
+        result = RediveCrawler.information
+    else:
+        result = RediveCrawler.get_url()
 
     # 處理要回傳的訊息
     message = TextSendMessage(text=result)
