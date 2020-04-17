@@ -29,6 +29,7 @@ def callback():
     except InvalidSignatureError:
         abort(400)
     return 'OK'
+    
 from rediveCrawler import crawler
 
 # 處理訊息
