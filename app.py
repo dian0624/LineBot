@@ -45,11 +45,33 @@ def handle_message(event):
     # 處理要回傳的訊息
     message = TextSendMessage(text=result)
     # 回傳訊息
-    print("++"*10,result)
-    print("*"*20,message)
     line_bot_api.reply_message(event.reply_token, message)
-    base = "全部主題, 綜合討論,瑪娜回收, 攻略心得, 日服公會, 台版專區, 日服專區, 版友創作, 集中討論, 板物公告, 社群交流, 食殿公會, 抱怨小屋, 遊戲實況, 設備問題, 劇情討論, 陸板專區, 陸服公會, 外掛專區, 真布公會, 破曉公會, 韓板專區"
-    line_bot_api.push_message(push_token, base)
+
+#按鈕
+message = TemplateSendMessage(
+    alt_text='Buttons template',
+    template=ButtonsTemplate(
+        thumbnail_image_url='https://example.com/image.jpg',
+        title='Menu',
+        text='Please select',
+        actions=[
+            PostbackTemplateAction(
+                label='postback',
+                text='postback text',
+                data='action=buy&itemid=1'
+            ),
+            MessageTemplateAction(
+                label='message',
+                text='message text'
+            ),
+            URITemplateAction(
+                label='uri',
+                uri='http://example.com/'
+            )
+        ]
+    )
+)
+line_bot_api.reply_message(event.reply_token, message)
 
 import os
 if __name__ == "__main__":
