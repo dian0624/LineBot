@@ -30,13 +30,14 @@ def callback():
         abort(400)
     return 'OK'
 from rediveCrawler import crawler
+
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 	RediveCrawler = crawler()
 	reply = event.message.text
 	if "test" in reply:
-		result = RediveCrawler.information()
+		result = RediveCrawler.information
 	else:
 		result = RediveCrawler.get_url()
 
