@@ -39,7 +39,7 @@ def handle_message(event):
     if "test" in reply:
         result = RediveCrawler.information
     else:
-        result = RediveCrawler.get_url()
+        result = RediveCrawler.get_url(reply)
 
     # 處理要回傳的訊息
     message = TextSendMessage(text=result)
