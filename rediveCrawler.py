@@ -42,7 +42,7 @@ class crawler:
         #     print("--------查無此討論區，自動導向「全部主題」討論區--------")
         #     addArea = 0
         if name in self.areaList:
-            addArea = self.areaList[area]
+            addArea = self.areaList[name]
         else:
             print("--------查無此討論區，自動導向「全部主題」討論區--------")
             addArea = 0        	
