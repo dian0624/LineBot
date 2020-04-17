@@ -53,9 +53,9 @@ class crawler:
         res.encoding = 'utf-8'
         html = res.text
 
-        self.crawl_redive(html)
+    #     self.crawl_redive(html)
 
-    def crawl_redive(self,html):
+    # def crawl_redive(self,html):
         parsehtml = etree.HTML(html)
         total =  parsehtml.xpath('//tr/td[@class="b-list__main"]/a/div[2]')   
         xStr = ""
