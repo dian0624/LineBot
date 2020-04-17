@@ -45,7 +45,7 @@ def handle_message(event):
     # 處理要回傳的訊息
     message = TextSendMessage(text=result)
     # 回傳訊息
-    print("++"*10,reply)
+    print("++"*10,result)
     print("*"*20,message)
     line_bot_api.reply_message(event.reply_token, message)
 
