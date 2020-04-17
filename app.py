@@ -45,10 +45,10 @@ def handle_message(event):
     # 處理要回傳的訊息
     message = TextSendMessage(text=result)
     # 回傳訊息
-    line_bot_api.reply_message(event.reply_token, message)
+    # line_bot_api.reply_message(event.reply_token, message)
 
 #按鈕
-message = TemplateSendMessage(
+message2 = TemplateSendMessage(
     alt_text='Buttons template',
     template=ButtonsTemplate(
         thumbnail_image_url='https://example.com/image.jpg',
@@ -71,7 +71,7 @@ message = TemplateSendMessage(
         ]
     )
 )
-line_bot_api.reply_message(event.reply_token, message)
+line_bot_api.reply_message(event.reply_token, message2)
 
 import os
 if __name__ == "__main__":
