@@ -72,7 +72,7 @@ class crawler:
                 title = "標題: " + name
                 hyperlink = "連結: " + nameURL
                 articleStr = "\n".join([title, hyperlink])
-                xStr += articleStr + "\n" + ("=="*40) + "\n"
+                xStr += articleStr + "\n" + ("=="*15) + "\n"
         # print(xStr)
        	return xStr[:2000]
                 # print("=="*20)
