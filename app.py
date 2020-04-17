@@ -29,7 +29,7 @@ def callback():
     except InvalidSignatureError:
         abort(400)
     return 'OK'
-    
+
 from rediveCrawler import crawler
 
 # 處理訊息
@@ -45,6 +45,7 @@ def handle_message(event):
     # 處理要回傳的訊息
     message = TextSendMessage(text=result)
     # 回傳訊息
+    print(message)
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
