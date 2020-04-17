@@ -74,7 +74,7 @@ class crawler:
                 articleStr = "\n".join([title, hyperlink])
                 xStr += articleStr + "\n" + ("=="*40) + "\n"
         # print(xStr)
-       	return xStr[10]
+       	return xStr
                 # print("=="*20)
                 # print(name,nameURL)
                 # print("=="*20)
