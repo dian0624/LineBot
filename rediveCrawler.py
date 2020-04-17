@@ -74,11 +74,11 @@ class crawler:
                 articleStr = "\n".join([title, hyperlink])
                 xStr += articleStr + "\n" + ("=="*40) + "\n"
         print(xStr)
-       	return xStr
+       	return xStr[10]
                 # print("=="*20)
                 # print(name,nameURL)
                 # print("=="*20)
 
-if __name__ == "__main__":
-    spider = crawler()
-    spider.get_url("綜合討論")
+# if __name__ == "__main__":
+#     spider = crawler()
+#     spider.get_url("綜合討論")
