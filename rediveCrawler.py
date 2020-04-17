@@ -34,13 +34,7 @@ class crawler:
             "集中討論, 板物公告, 社群交流, 食殿公會, 抱怨小屋, 遊戲實況, 設備問題",
             "劇情討論, 陸板專區, 陸服公會, 外掛專區, 真布公會, 破曉公會, 韓板專區")
         page = 1
-        # area = input("請輸入要訪問那一個討論區？")
 
-        # if area in self.areaList:
-        #     addArea = self.areaList[area]
-        # else:
-        #     print("--------查無此討論區，自動導向「全部主題」討論區--------")
-        #     addArea = 0
         if name in self.areaList:
             addArea = self.areaList[name]
         else:
@@ -62,23 +56,18 @@ class crawler:
 
         for sing in total :
             baseNameURL = "https://forum.gamer.com.tw/"
-            addNameURL = sing.xpath('./div/p/@href')
-            
+            addNameURL = sing.xpath('./div/p/@href')[0]
+            name = sing.xpath('./div/p/text()')[0]
 
-            names = sing.xpath('./div/p/text()')
+            nameURL = baseNameURL + str(addNameURL)
+            title = "標題: " + name
+            hyperlink = "連結: " + nameURL
+            articleStr = "\n".join([title, hyperlink])
+            xStr += articleStr + "\n" + ("=="*15) + "\n"   
 
-            for name, nameURL in zip(names, addNameURL):
-                nameURL = baseNameURL + str(addNameURL[0])
-                title = "標題: " + name
-                hyperlink = "連結: " + nameURL
-                articleStr = "\n".join([title, hyperlink])
-                xStr += articleStr + "\n" + ("=="*15) + "\n"
         # print(xStr)
        	return xStr[:2000]
-                # print("=="*20)
-                # print(name,nameURL)
-                # print("=="*20)
 
-# if __name__ == "__main__":
-#     spider = crawler()
-#     spider.get_url("綜合討論")
+if __name__ == "__main__":
+    spider = crawler()
+    spider.get_url("綜合討論")

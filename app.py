@@ -47,32 +47,6 @@ def handle_message(event):
     # 回傳訊息
     line_bot_api.reply_message(event.reply_token, message)
 
-#按鈕
-    message2 = TemplateSendMessage(
-        alt_text='Buttons template',
-        template=ButtonsTemplate(
-            thumbnail_image_url='https://example.com/image.jpg',
-            title='Menu',
-            text='Please select',
-            actions=[
-                PostbackTemplateAction(
-                    label='postback',
-                    text='postback text',
-                    data='action=buy&itemid=1'
-                ),
-                MessageTemplateAction(
-                    label='message',
-                    text='message text'
-                ),
-                URITemplateAction(
-                    label='uri',
-                    uri='http://example.com/'
-                )
-            ]
-        )
-    )
-    line_bot_api.reply_message(event.reply_token, message2)
-
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
