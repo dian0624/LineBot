@@ -38,7 +38,7 @@ def handle_message(event):
     RediveCrawler = crawler()
     reply = event.message.text
     if "嗨" in reply:
-        result = RediveCrawler.information
+        result = RediveCrawler.__information
     else:
         result = RediveCrawler.get_url(reply)
 
