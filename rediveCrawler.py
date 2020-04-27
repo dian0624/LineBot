@@ -1,6 +1,7 @@
 import requests
 from lxml import etree
 import random 
+import re 
 
 class crawler:
     def __init__(self):
@@ -39,7 +40,6 @@ class crawler:
 
     def get_url(self,name):
         page = 1
-
         if name in self.__areaList:
             addArea = self.__areaList[name]
             start_urls = self.baseUrl %(str(page),str(addArea))
@@ -67,8 +67,7 @@ class crawler:
             articleStr = "\n".join([title, hyperlink])
             xStr += articleStr + "\n" + ("=="*15) + "\n"   
        	return xStr[:1200]
-        print(start_urls)
 
 if __name__ == "__main__":
     spider = crawler()
-    spider.get_url("綜合討論")
+    spider.get_url("sdasadasSDAS.綜合討論565")
